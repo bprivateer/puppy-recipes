@@ -1,0 +1,33 @@
+#container{
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px;
+}
+
+#row1{
+  display: flex;
+  justify-content: center;
+  padding:30px;
+  border-bottom: black solid 1px;
+}
+
+#row2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+}
+div{
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+p{
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
