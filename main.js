@@ -18,11 +18,11 @@ container.innerHTML ='';
 
       for (var i = 0; i < 8; i++ ){
         if (data.results[i].thumbnail === ""){
-          container.innerHTML += `<div id="row2"><h3><a href="${data.results[i]}.href}">${data.results[i].title}</a>"</h3><br>
+          container.innerHTML += `<div id="row2"><h3><a href="${data.results[i].href}">${data.results[i].title}</a></h3><br>
           <img src="http://via.placeholder.com/100x100"></div>
           `
         } else {
-          container.innerHTML += `<div id="row2>"<h3><a href="${data.results[i]}.href}">${data.results[i].title}</a></h3><br>
+          container.innerHTML += `<div id="row2"><h3><a href="${data.results[i].href}">${data.results[i].title}</a></h3><br>
           <img src="${data.results[i].thumbnail}"></div>
           `
 
