@@ -1,28 +1,49 @@
 let container = document.getElementById('container');
 let button = document.getElementById('btn');
-let input = document.querySelector('input');
-console.log(input);
 
 
-button.addEventListener("click", function(){
+// button.addEventListener("click", function(){
+  // console.log("value", input.value);
+  //
+  // console.log(search);
+
+function clicky() {
+  let input = document.querySelector('input');
+container.innerHTML ='';
   let search = "https://recipepuppyproxy.herokuapp.com/api/?q=" + input.value;
-  console.log(search);
 
   fetch(search)
-    .then(function(response) {
-        response.json().then(function(data) {
+  .then(function(response) {
+    response.json().then(function(data) {
 
-          console.log(data.results);
-          });
+      for (var i = 0; i < 8; i++ ){
+        if (data.results[i].thumbnail === ""){
+          container.innerHTML += `<div id="row2"><h3><a href="${data.results[i]}.href}">${data.results[i].title}</a>"</h3><br>
+          <img src="http://via.placeholder.com/100x100"></div>
+          `
+        } else {
+          container.innerHTML += `<div id="row2>"<h3><a href="${data.results[i]}.href}">${data.results[i].title}</a></h3><br>
+          <img src="${data.results[i].thumbnail}"></div>
+          `
+
+        }
+
+
       }
-    )
-    .catch(function(err) {
-      console.log("Fetch Error :-S", err);
+      console.log(search);
+      console.log(data.results);
     });
-
-
-
+  }
+)
+.catch(function(err) {
+  console.log("Fetch Error :-S", err);
 });
+
+
+console.log("doneeeeeeee");
+
+}
+// });
 
 
 // }
